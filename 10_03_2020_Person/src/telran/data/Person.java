@@ -26,6 +26,7 @@ public class Person {
 
     @Override
     public String toString() {
+        System.out.println("------- next person -------");
         return "Person: " + name + '\n' + address + '\n';
     }
 
@@ -36,10 +37,16 @@ public class Person {
         }
     }
     public static void displayPersons(Person[] persons){
+
+        int count = 0;
         for (int i = 0; i < persons.length; i++) {
-            if(persons[i] != null)
-            System.out.println(persons[i]);
+            if (persons[i] != null) {
+                System.out.println(persons[i]);
+            }else{
+                count++;
+            }
         }
+        System.out.println("And " + count + " persons are not from this city.");
     }
 
     public static void findByName(Person[] persons, String name){
@@ -48,7 +55,6 @@ public class Person {
             if(persons[i].getName().equals(name)){
                 System.out.println(name + " livs in " + persons[i].getAddress().getCity());
                 flag = 1; }
-
         }
             if(flag == 0){
                 System.out.println("This person isn't found");

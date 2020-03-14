@@ -31,14 +31,14 @@ public class Main {
         System.out.println(p1.getAddress().getCity());
         System.out.println(p1.getName() + " livs on the " + p1.getAddress().getStreet());
 
-        System.out.println();
+        System.out.println("--------Find By Name---------");
         findByName(persons, "Sergi");
 
-        System.out.println();
+        System.out.println("--------Find By City---------");
         findByCity(persons, "Berlin");
 
-        System.out.println();
-        Person[] cityMembers = Person.listCityMembers(persons, "Berlin", 5);
+        System.out.println("-------------City Members--------------");
+        Person[] cityMembers = Person.listCityMembers(persons, "Berlin" , 5);
         Person.displayPersons(cityMembers);
     }
 }

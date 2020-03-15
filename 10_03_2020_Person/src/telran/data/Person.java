@@ -30,34 +30,36 @@ public class Person {
         return "Person: " + name + '\n' + address + '\n';
     }
 
-    public static void displayArrayPerson(Person[] persons){
-        for (Person p:persons) {
+    public static void displayArrayPerson(Person[] persons) {
+        for (Person p : persons) {
             System.out.println(p.toString());
 
         }
     }
-    public static void displayPersons(Person[] persons){
+
+    public static void displayPersons(Person[] persons) {
 
         int count = 0;
         for (int i = 0; i < persons.length; i++) {
             if (persons[i] != null) {
                 System.out.println(persons[i]);
-            }else{
+            } else {
                 count++;
             }
         }
         System.out.println("And " + count + " persons are not from this city.");
     }
 
-    public static void findByName(Person[] persons, String name){
+    public static void findByName(Person[] persons, String name) {
         int flag = 0;
         for (int i = 0; i < persons.length; i++) {
-            if(persons[i].getName().equals(name)){
+            if (persons[i].getName().equals(name)) {
                 System.out.println(name + " livs in " + persons[i].getAddress().getCity());
-                flag = 1; }
+                flag = 1;
+            }
         }
-            if(flag == 0){
-                System.out.println("This person isn't found");
+        if (flag == 0) {
+            System.out.println("This person isn't found");
         }
     }
 
@@ -74,11 +76,11 @@ public class Person {
         }
     }
 
-    public static Person[] listCityMembers(Person[] persons, String city, int size){
+    public static Person[] listCityMembers(Person[] persons, String city, int size) {
         int i = 0;
         Person[] cityMembers = new Person[size];
         for (Person p : persons) {
-            if(p.getAddress().getCity().equalsIgnoreCase(city)){
+            if (p.getAddress().getCity().equalsIgnoreCase(city)) {
                 cityMembers[i] = p;
                 i++;
             }

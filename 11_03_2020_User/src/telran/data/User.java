@@ -21,15 +21,26 @@ public class User {
         return secretCode;
     }
 
+
+
     public static User getUserByName(User[] users, String name){
-        for (int i = 0; i < users.length; i++) {
-            if(users[i].getName().equalsIgnoreCase(name)){
-                return users[i];
+
+        for (User user : users) {
+            if (user.getName().equals(name)) {
+                return user;
             }
         }
         return null;
     }
 
+    public static User getUserByCode(User[] users, int secretCode){
+        for (User user : users) {
+            if (user.getSecretCode() == (secretCode)) {
+                return user;
+            }
+        }
+        return null;
+    }
     @Override
     public String toString() {
         return "User: " + name + ", Code:  " + secretCode + '.';

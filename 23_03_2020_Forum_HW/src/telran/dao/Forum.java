@@ -49,7 +49,7 @@ public class Forum {
         Post[] authorPosts = new Post[numberOfPost];
         int j = 0;
         for (int i = 0; i < size; i++) {
-            if (posts[i].getAuthor().getUserName().equals(author) && j < numberOfPost) {
+            if (posts[i].getAuthor().equals(author) && j < numberOfPost) {
                 authorPosts[j] = posts[i];
                 j++;
             }

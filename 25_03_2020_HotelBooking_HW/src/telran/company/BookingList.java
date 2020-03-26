@@ -35,8 +35,11 @@ public class BookingList {
     }
 
     public void displayBooking() {
+        int count = 0;
         for (int i = 0; i < size; i++) {
-            System.out.println(bookings[i]);
+            count++;
+            System.out.println(count + ". " + bookings[i]);
+
 
         }
     }
@@ -49,5 +52,14 @@ public class BookingList {
             }
         }
         return null;
+    }
+
+    public void displayLastBooking(int n) {
+        int count = size - n;
+        for (int i = size - n; i < size; i++) {
+            count++;
+            System.out.println(count + ". " + bookings[i]);
+
+        }
     }
 }

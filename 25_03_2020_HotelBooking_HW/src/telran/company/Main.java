@@ -52,15 +52,21 @@ public class Main {
         myList.addBooking(b7);
         myList.addBooking(b8);
 
-        /* System.out.println("------- before delete Booking ------");
-        myList.displayBooking(); */
+        //System.out.println("------- before delete Booking ------");
+        myList.displayBooking();
 
        /*  System.out.println("------- after delete Booking ------");
         myList.deleteBooking(p5);
         myList.displayBooking();  */
 
-        System.out.println("------- Booking by person -------");
-        myList.getBookingsByPerson(p3);
+        //System.out.println("------- Booking by person -------");
+        //myList.getBookingsByPerson(p3);
+
+        //System.out.println();
+        //myList.displayLastBooking(3);
+
+        System.out.println("----------------");
+        myList.displayLastBooking(2);
 
     }
 }

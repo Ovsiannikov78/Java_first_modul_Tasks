@@ -3,16 +3,16 @@ package telran.data;
 
 public class Post {
     private User author;
-    private static int postID;
+    private int postID;
     private String title;
-    private static String content;
-    private static int likes = 0;
+    private String content;
+    private int likes = 0;
 
     public Post(User author, int postID, String title, String content) {
         this.author = author;
-        Post.postID = postID;
+        this.postID = postID;
         this.title = title;
-        Post.content = content;
+        this.content = content;
     }
 
     public User getAuthor() {
@@ -27,16 +27,16 @@ public class Post {
         return title;
     }
 
-    public static String getContent() {
+    public String getContent() {
         return content;
     }
 
-    public static int getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public static void setContent(String content) {
-        Post.content = content;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override

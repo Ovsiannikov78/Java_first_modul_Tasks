@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class UserAdmin extends User {
     static Scanner scanner = new Scanner(System.in);
-    private static String password;
+    private String password;
 
     public UserAdmin(String userName, int age, String password) {
         super(userName, age);
-        UserAdmin.password = password;
+        this.password = password;
     }
 
-    public static String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public static boolean verificationByCode() {
+    public boolean verificationByCode() {
         int count = 0;
         while (count < 3) {
             System.out.println("Please, enter you Password: ");
             String password = scanner.nextLine();
-            if (password.equals(UserAdmin.getPassword())) {
+            if (password.equals(this.getPassword())) {
                 System.out.println("Hello . You are successfully identified.");
                 return true;
             } else {
@@ -31,18 +31,19 @@ public class UserAdmin extends User {
         return false;
     }
 
-    public static void updatePostByAdmin(Post[] posts) {
+    public void updatePostByAdmin(Post[] posts) {
         boolean flag = false;
-        if (verificationByCode()) {
+        if (this.verificationByCode()) {
             System.out.println("Please, enter ID of the post you want to change; ");
-            int postId = scanner.nextInt();
-            System.out.println(postId);
+            int postId = Integer.parseInt(scanner.nextLine()); // 2 способ
+            //scanner.nextLine();                              // 1 способ
+
             for (int i = 0; i < posts.length; i++) {
                 if (posts[i].getPostID() == postId) {
                     System.out.println("Enter new content: ");
                     String newContent = scanner.nextLine();
-                    Post.setContent(newContent);
-                    System.out.println(postId + " content change to: " + Post.getContent());
+                    posts[i].setContent(newContent);
+                    System.out.println(postId + " content change to: " + posts[i].getContent());
                     flag = true;
                 }
             }

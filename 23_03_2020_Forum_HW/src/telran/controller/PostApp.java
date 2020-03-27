@@ -46,23 +46,22 @@ public class PostApp {
         myForum.addPost(p9);
         myForum.addPost(p10);
 
-        p9.getLikes();
-        p9.getLikes();
-        p9.getLikes();
+        p9.addLike();
+        p9.addLike();
+        p9.addLike();
 
-        Post[] postByAuthor = myForum.getPostByAuthor(author2, 4);
-        printPostArray(postByAuthor);   /* метод не работатет. Так как в самом методе в Forum параметр User author
-                                          не сравнивается через equals с другим параметром(String)*/
+        Post[] postByAuthor = myForum.getPostByAuthor(author4, 4);
+        printPostArray(postByAuthor);
 
-
+        /*System.out.println(p9);
         System.out.println("----------------");
-        //printPostArray(posts);
+        printPostArray(posts); */
 
-        System.out.println("-----------------");
-        //verificationByCode();
+        /*System.out.println("-----------------");
+        admin.verificationByCode(); */
 
         //System.out.println("-----------------");
-        //updatePostByAdmin(posts);                    // этот метод в UserAdmin не работает. Почему не понимаю
+        //admin.updatePostByAdmin(posts);                    // этот метод в UserAdmin не работает. Почему не понимаю
     }
 
 
